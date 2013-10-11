@@ -2,7 +2,7 @@
 
 namespace zlokomatic\phpLoL;
 
-class LoLAuth 
+class LoLAuth
 {
 
     private $config;
@@ -38,18 +38,20 @@ class LoLAuth
         $context = stream_context_create($opts);
         $fp = @fopen("https://{$this->config->getLoginUrl()}{$this->queue_urls['auth']}", 'r', false, $context);
         if(!$fp){
+            if(!isset($http_response_header)){
+                throw new \Exception("Connection failed - is openssl activated in php.ini?");
+            }
             preg_match("/HTTP\/1\.1 (?P<code>\d{3}).*/", $http_response_header[0], $matches);
-           if($matches['code'] == 403){
-               throw new \Exception("Invalid username or password");
-           }
-           else{
-               throw new \Exception("No Connection to login server");
-           }
+            if($matches['code'] == 403){
+                throw new \Exception("Invalid username or password");
+            }else{
+                throw new \Exception("No Connection to login server");
+            }
         }
         $response = trim(stream_get_contents($fp));
         fclose($fp);
         $data = json_decode($response, true);
-        
+
         switch($data['status']){
             case 'QUEUE':
                 return array($data['user'], $this->queue($data));
@@ -122,5 +124,5 @@ class LoLAuth
             }
         }
     }
- 
+
 }
