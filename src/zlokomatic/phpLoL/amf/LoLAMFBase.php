@@ -50,5 +50,16 @@ class LoLAMFBase
         return $this->futureData;
     }
 
+    public function toArray()
+    {
+        $arr = array();
+        $class_vars = get_class_vars(get_class($this));
+        foreach ($class_vars as $name => $value) {
+            $getter = "get" . ucfirst($name);
+            $arr[$name] = $this->$getter();
+        }
+        return $arr;
+    }
+
 
 } 
