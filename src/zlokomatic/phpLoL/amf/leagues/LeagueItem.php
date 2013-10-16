@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 03.10.13
- * Time: 23:48
- */
 
 namespace zlokomatic\phpLoL\amf\leagues;
 

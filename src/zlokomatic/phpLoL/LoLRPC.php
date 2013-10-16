@@ -50,6 +50,12 @@ class LoLRPC extends RtmpClient
         \SabreAMF_ClassMapper::registerClass('com.riotgames.leagues.pojo.LeagueListDTO', '\zlokomatic\phpLoL\amf\leagues\LeagueList');
         \SabreAMF_ClassMapper::registerClass('com.riotgames.leagues.pojo.LeagueItemDTO', '\zlokomatic\phpLoL\amf\leagues\LeagueItem');
         \SabreAMF_ClassMapper::registerClass('com.riotgames.leagues.pojo.MiniSeriesDTO', '\zlokomatic\phpLoL\amf\leagues\MiniSeries');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlatformGameLifecycleDTO', '\zlokomatic\phpLoL\amf\game\PlatformGameLifecycle');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.GameDTO', '\zlokomatic\phpLoL\amf\game\Game');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlayerParticipant', '\zlokomatic\phpLoL\amf\game\PlayerParticipant');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.BannedChampion', '\zlokomatic\phpLoL\amf\game\BannedChampion');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlayerChampionSelectionDTO', '\zlokomatic\phpLoL\amf\game\PlayerChampionSelection');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlayerCredentialsDto', '\zlokomatic\phpLoL\amf\game\PlayerCredentials');
 
     }
     public function login($username, $password, $credentials, $partner = null)
@@ -176,6 +182,15 @@ class LoLRPC extends RtmpClient
     public function getAllLeaguesForPlayer($summonerId)
     {
         $result = $this->invoke("leaguesServiceProxy", "getAllLeaguesForPlayer", $summonerId);
+        $result = $result['data']->getData();
+        $result = $result['body'];
+        return $result;
+    }
+
+    public function retrieveInProgressSpectatorGameInfo($summonerName)
+    {
+        $summonerName = $summonerName[0];
+        $result = $this->invoke("gameService", "retrieveInProgressSpectatorGameInfo", $summonerName);
         $result = $result['data']->getData();
         $result = $result['body'];
         return $result;
