@@ -1,10 +1,8 @@
 <?php
 
-
-require_once 'vendor/autoload.php';
+namespace zlokomatic\phpLoL\examples;
 
 use zlokomatic\phpLoL\LoLClient;
-
 
 class LOLProfiler extends LoLClient
 {
@@ -35,3 +33,4 @@ class LOLProfiler extends LoLClient
     
 
 }
+
