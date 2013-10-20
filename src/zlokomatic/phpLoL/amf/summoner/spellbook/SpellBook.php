@@ -7,5 +7,8 @@ use zlokomatic\phpLoL\amf\IBookTemplate;
 
 class SpellBook extends IBookTemplate
 {
-    // EDIT IBookTemplate.php
+    public function __construct()
+    {
+        // EDIT IBookTemplate.php
+    }
 } 
