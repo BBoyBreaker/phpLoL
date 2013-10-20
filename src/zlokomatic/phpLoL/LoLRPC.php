@@ -57,6 +57,13 @@ class LoLRPC extends RtmpClient
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlayerChampionSelectionDTO', '\zlokomatic\phpLoL\amf\game\PlayerChampionSelection');
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlayerCredentialsDto', '\zlokomatic\phpLoL\amf\game\PlayerCredentials');
 
+
+        // 20-10-2013
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.AllSummonerData', '\zlokomatic\phpLoL\amf\summoner\AllSummonerData');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.masterybook.MasteryBookDTO', '\zlokomatic\phpLoL\amf\summoner\masterybook\MasteryBookDTO');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.masterybook.MasteryBookPageDTO','\zlokomatic\phpLoL\amf\summoner\masterybook\MasteryBookPageDTO');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.masterybook.TalentEntry','\zlokomatic\phpLoL\amf\summoner\masterybook\TalentEntry');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.Talent','\zlokomatic\phpLoL\amf\summoner\Talent');
     }
     public function login($username, $password, $credentials, $partner = null)
     {
