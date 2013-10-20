@@ -56,7 +56,16 @@ Avaiable functions are:
 * getSummonerNames(array $accountIds)
 * getRecentGames($accountId)
 * getPlayerStatsByAccountId($accountId)
-* getAggregatedStats($accountId)
+* getAggregatedStats($accountId, $gameMode, $season)
+    * Available gameModes
+        * CLASSIC
+        * ODIN
+        * ARAM
+        * TUTORIAL
+    * Available timelines
+      * ONE
+      * TWO
+      * CURRENT
 * getAllLeaguesForPlayer($summonerId)
  
  News
