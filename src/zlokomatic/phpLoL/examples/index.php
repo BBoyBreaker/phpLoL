@@ -21,6 +21,9 @@ $aggStats = $client->getAggregatedStats($summoner->getAcctId(), 'CLASSIC', 'CURR
 
 $leagues = $client->getAllLeaguesForPlayer($summoner->getSummonerId());
 
+// 20-10
+$allDataProvider = $client->getAllSummonerDataByAccount($summoner->getAcctId());
+
 /*
 
 $profiler = new LOLProfiler('Username','Password','NA');
