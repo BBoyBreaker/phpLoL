@@ -64,6 +64,7 @@ class LoLRPC extends RtmpClient
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.masterybook.MasteryBookPageDTO','\zlokomatic\phpLoL\amf\summoner\masterybook\MasteryBookPageDTO');
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.masterybook.TalentEntry','\zlokomatic\phpLoL\amf\summoner\masterybook\TalentEntry');
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.Talent','\zlokomatic\phpLoL\amf\summoner\Talent');
+        \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.Summoner','\zlokomatic\phpLoL\amf\summoner\MainSummoner');
     }
     public function login($username, $password, $credentials, $partner = null)
     {
@@ -198,6 +199,14 @@ class LoLRPC extends RtmpClient
     {
         $summonerName = $summonerName[0];
         $result = $this->invoke("gameService", "retrieveInProgressSpectatorGameInfo", $summonerName);
+        $result = $result['data']->getData();
+        $result = $result['body'];
+        return $result;
+    }
+    
+    public function getAllSummonerDataByAccount($accountId)
+    {
+        $result = $this->invoke("summonerService", "getAllSummonerDataByAccount", $accountId);
         $result = $result['data']->getData();
         $result = $result['body'];
         return $result;
