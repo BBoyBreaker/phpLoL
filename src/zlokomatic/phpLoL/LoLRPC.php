@@ -204,9 +204,10 @@ class LoLRPC extends RtmpClient
         return $result;
     }
     
-    public function getAllSummonerDataByAccount($accountId)
+    
+    public function getMasteryBook($summonerId)
     {
-        $result = $this->invoke("summonerService", "getAllSummonerDataByAccount", $accountId);
+        $result = $this->invoke("masteryBookService", "getMasteryBook", $summonerId);
         $result = $result['data']->getData();
         $result = $result['body'];
         return $result;
