@@ -17,6 +17,7 @@ class AggregatedStatsKey extends LoLAMFBase
     protected $gameMode;
     protected $userId;
     protected $gameModeString;
+    protected $season;
 
     /**
      * @param mixed $gameMode
@@ -64,6 +65,22 @@ class AggregatedStatsKey extends LoLAMFBase
     public function getUserId()
     {
         return $this->userId;
+    }
+
+    /**
+     * @param mixed $season
+     */
+    public function setSeason($season)
+    {
+        $this->season = $season;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeason()
+    {
+        return $this->season;
     }
 
 

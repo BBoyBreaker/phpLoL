@@ -63,9 +63,9 @@ Avaiable functions are:
         * ARAM
         * TUTORIAL
     * Available timelines
-      * ONE
-      * TWO
-      * CURRENT
+      * 1 
+      * 2 
+      * 3
 * getAllLeaguesForPlayer($summonerId)
  
  News

@@ -15,6 +15,7 @@ class PlayerStatSummaries extends LoLAMFBase {
 
     protected $playerStatSummarySet = array();
     protected $userId;
+    protected $season;
 
     /**
      * @param mixed $playerStatSummarySet
@@ -48,6 +49,22 @@ class PlayerStatSummaries extends LoLAMFBase {
     public function getUserId()
     {
         return $this->userId;
+    }
+
+    /**
+     * @param mixed $season
+     */
+    public function setSeason($season)
+    {
+        $this->season = $season;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeason()
+    {
+        return $this->season;
     }
 
 

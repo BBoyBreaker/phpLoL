@@ -198,7 +198,12 @@ class LoLRPC extends RtmpClient
     public function retrieveInProgressSpectatorGameInfo($summonerName)
     {
         $summonerName = $summonerName[0];
-        $result = $this->invoke("gameService", "retrieveInProgressSpectatorGameInfo", $summonerName);
+        try{
+            $result = $this->invoke("gameService", "retrieveInProgressSpectatorGameInfo", $summonerName);
+        }
+        catch(\Exception $e){
+            return $e->getMessage();
+        }
         $result = $result['data']->getData();
         $result = $result['body'];
         return $result;
