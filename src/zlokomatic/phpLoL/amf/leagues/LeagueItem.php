@@ -25,6 +25,8 @@ class LeagueItem extends LoLAMFBase {
     protected $timeUntilDecay;
     protected $playerOrTeamName;
     protected $wins;
+    protected $demotionWarning;
+    protected $displayDecayWarning;
 
     /**
      * @param mixed $freshBlood
@@ -312,6 +314,38 @@ class LeagueItem extends LoLAMFBase {
     public function getMiniSeries()
     {
         return $this->miniSeries;
+    }
+
+    /**
+     * @param mixed $demotionWarning
+     */
+    public function setDemotionWarning($demotionWarning)
+    {
+        $this->demotionWarning = $demotionWarning;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDemotionWarning()
+    {
+        return $this->demotionWarning;
+    }
+
+    /**
+     * @param mixed $displayDecayWarning
+     */
+    public function setDisplayDecayWarning($displayDecayWarning)
+    {
+        $this->displayDecayWarning = $displayDecayWarning;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDisplayDecayWarning()
+    {
+        return $this->displayDecayWarning;
     }
 
 
