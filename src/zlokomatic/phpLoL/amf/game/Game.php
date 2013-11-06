@@ -42,6 +42,9 @@ class Game extends LoLAMFBase {
     protected $playerChampionSelections;
     protected $joinTimerDuration;
     protected $passbackDataPacket;
+    protected $teamOnePickOutcome;
+    protected $teamTwoPickOutcome;
+    protected $terminatedConditionString;
 
     /**
      * @param mixed $banOrder
@@ -629,5 +632,51 @@ class Game extends LoLAMFBase {
         return $this->terminatedCondition;
     }
 
+    /**
+     * @param mixed $teamOnePickOutcome
+     */
+    public function setTeamOnePickOutcome($teamOnePickOutcome)
+    {
+        $this->teamOnePickOutcome = $teamOnePickOutcome;
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getTeamOnePickOutcome()
+    {
+        return $this->teamOnePickOutcome;
+    }
+
+    /**
+     * @param mixed $teamTwoPickOutcome
+     */
+    public function setTeamTwoPickOutcome($teamTwoPickOutcome)
+    {
+        $this->teamTwoPickOutcome = $teamTwoPickOutcome;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTeamTwoPickOutcome()
+    {
+        return $this->teamTwoPickOutcome;
+    }
+
+    /**
+     * @param mixed $terminatedConditionString
+     */
+    public function setTerminatedConditionString($terminatedConditionString)
+    {
+        $this->terminatedConditionString = $terminatedConditionString;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTerminatedConditionString()
+    {
+        return $this->terminatedConditionString;
+    }
 } 
