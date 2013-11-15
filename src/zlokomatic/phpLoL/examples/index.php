@@ -17,7 +17,7 @@ $games = $client->getRecentGames($summoner->getAcctId());
 
 $stats = $client->getPlayerStatsByAccountId($summoner->getAcctId());
 
-$aggStats = $client->getAggregatedStats($summoner->getAcctId(), 'CLASSIC', 'CURRENT');
+$aggStats = $client->getAggregatedStats($summoner->getAcctId(), 'CLASSIC', 3);
 
 $leagues = $client->getAllLeaguesForPlayer($summoner->getSummonerId());
 
