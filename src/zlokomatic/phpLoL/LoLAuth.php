@@ -58,7 +58,7 @@ class LoLAuth
             case 'LOGIN':
                 return array($data['user'] , $data['token']);
             default:
-                throw \Exception("Unknown queue status {$data['status']}");
+                throw new \Exception("Unknown queue status {$data['status']}");
         }
     }
 
