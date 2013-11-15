@@ -72,6 +72,7 @@ Avaiable functions are:
 ------------------------
 
    1. Made project composer compliant
+   2. Small example to show how a way how to stay connected: https://github.com/zlokomatic/phpLoL-tcp
 
 
 Credit
