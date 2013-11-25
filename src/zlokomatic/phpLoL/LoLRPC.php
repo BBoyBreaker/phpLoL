@@ -57,7 +57,6 @@ class LoLRPC extends RtmpClient
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlayerChampionSelectionDTO', '\zlokomatic\phpLoL\amf\game\PlayerChampionSelection');
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.game.PlayerCredentialsDto', '\zlokomatic\phpLoL\amf\game\PlayerCredentials');
 
-
         // 20-10-2013
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.AllSummonerData', '\zlokomatic\phpLoL\amf\summoner\AllSummonerData');
         \SabreAMF_ClassMapper::registerClass('com.riotgames.platform.summoner.masterybook.MasteryBookDTO', '\zlokomatic\phpLoL\amf\summoner\masterybook\MasteryBookDTO');
@@ -153,9 +152,9 @@ class LoLRPC extends RtmpClient
         return $result;
     }
 
-    public function getSummonerNames(array $accountIds)
+    public function getSummonerNames(array $summonerIds)
     {
-        $result = $this->invoke("summonerService", "getSummonerNames", $accountIds);
+        $result = $this->invoke("summonerService", "getSummonerNames", $summonerIds);
         $result = $result['data']->getData();
         $summonerNames = array();
         $result = (array) $result['body']->getIterator();
@@ -179,9 +178,9 @@ class LoLRPC extends RtmpClient
         return $result;
     }
 
-    public function getAggregatedStats($accountId)
+    public function getAggregatedStats($summonerId)
     {
-        $result = $this->invoke("playerStatsService", "getAggregatedStats", $accountId);
+        $result = $this->invoke("playerStatsService", "getAggregatedStats", $summonerId);
         $result = $result['data']->getData();
         $result = $result['body'];
         return $result;
@@ -209,7 +208,6 @@ class LoLRPC extends RtmpClient
         return $result;
     }
     
-    
     public function getMasteryBook($summonerId)
     {
         $result = $this->invoke("masteryBookService", "getMasteryBook", $summonerId);
@@ -234,7 +232,3 @@ class LoLRPC extends RtmpClient
     }
      */
 }
-
-
-
-
