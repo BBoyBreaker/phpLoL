@@ -217,6 +217,14 @@ class LoLRPC extends RtmpClient
         $result = $result['body'];
         return $result;
     }
+    
+    public function getSpellBook($summonerId)
+    {
+        $result = $this->invoke("spellBookService", "getSpellBook", $summonerId);
+        $result = $result['data']->getData();
+        $result = $result['body'];
+        return $result;
+    }
 
     /*
     private function heartbeat()
