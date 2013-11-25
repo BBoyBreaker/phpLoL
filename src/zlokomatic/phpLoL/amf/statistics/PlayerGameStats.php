@@ -55,6 +55,9 @@ class PlayerGameStats extends LoLAMFBase {
     protected $predictedWinPct;
     protected $rating;
     protected $championId;
+    protected $leveledUp;
+    protected $voterRating;
+    protected $ratingAdjustmentFlags;
 
     /**
      * @param mixed $fellowPlayers
@@ -730,6 +733,54 @@ class PlayerGameStats extends LoLAMFBase {
     public function getBoostIpEarned()
     {
         return $this->boostIpEarned;
+    }
+
+    /**
+     * @param mixed $leveledUp
+     */
+    public function setLeveledUp($leveledUp)
+    {
+        $this->leveledUp = $leveledUp;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLeveledUp()
+    {
+        return $this->leveledUp;
+    }
+	
+    /**
+     * @param mixed $voterRating
+     */
+    public function setVoterRating($voterRating)
+    {
+        $this->voterRating = $voterRating;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVoterRating()
+    {
+        return $this->voterRating;
+    }
+	
+    /**
+     * @param mixed $ratingAdjustmentFlags
+     */
+    public function setRatingAdjustmentFlags($ratingAdjustmentFlags)
+    {
+        $this->ratingAdjustmentFlags = $ratingAdjustmentFlags;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRatingAdjustmentFlags()
+    {
+        return $this->ratingAdjustmentFlags;
     }
 
 
