@@ -4,15 +4,16 @@ namespace zlokomatic\phpLoL;
 
 class LoLConfig
 {
-    private $clientVersion = "3.13.13_10_31_16_21";
+    private $clientVersion = "3.14.13_11_19_11_32";
     private $region;
-    private $regions = array('EUW', 'EUNE', 'NA', 'BR', 'LAN', 'LAS');
+    private $regions = array('EUW', 'EUNE', 'NA', 'BR', 'LAN', 'LAS', 'RU');
     private $login_queue_host = array('EUW' => 'lq.eu.lol.riotgames.com',
                                       'EUNE' => 'lq.eun1.lol.riotgames.com',
                                       'NA' => 'lq.na1.lol.riotgames.com',
                                       'BR' => 'lq.br.lol.riotgames.com',
                                       'LAN' => 'lq.la1.lol.riotgames.com',
                                       'LAS' => 'lq.la2.lol.riotgames.com',
+                                      'RU' => 'lq.ru.lol.riotgames.com',
                                      );
     private $rpc_host = array('EUW' => 'prod.eu.lol.riotgames.com',
                               'EUNE' => 'prod.eun1.lol.riotgames.com',
@@ -20,6 +21,7 @@ class LoLConfig
                               'BR' => 'prod.br.lol.riotgames.com',
                               'LAN' => 'prod.la1.lol.riotgames.com',
                               'LAS' => 'prod.la2.lol.riotgames.com',
+                              'RU' => 'prod.ru.lol.riotgames.com',
                              );
 
     public function __construct($region)
