@@ -4,7 +4,7 @@ namespace zlokomatic\phpLoL;
 
 class LoLConfig
 {
-    private $clientVersion = "3.14.13_11_19_11_32";
+    private $clientVersion = "3.15.13_12_13_16_07";
     private $region;
     private $regions = array('EUW', 'EUNE', 'NA', 'BR', 'LAN', 'LAS', 'RU');
     private $login_queue_host = array('EUW' => 'lq.eu.lol.riotgames.com',
