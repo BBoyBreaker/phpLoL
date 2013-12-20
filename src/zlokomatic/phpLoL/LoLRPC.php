@@ -125,6 +125,8 @@ class LoLRPC extends RtmpClient
         
         
         $this->loggedIn = true;
+
+        return $accountSummary;
     }
     
     public function logout()

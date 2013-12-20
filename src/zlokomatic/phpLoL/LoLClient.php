@@ -6,6 +6,7 @@ class LoLClient
 {
     private $config;
     private $rtmp;
+    private $account;
 
     public function __construct($username, $password, $region='EUW')
     {
@@ -16,7 +17,7 @@ class LoLClient
         
         $this->rtmp = new LoLRPC($this->config->getClientVersion());
         if($this->rtmp->connect("rtmps", $this->config->getRPCUrl(),2099, "", "app:/mod_ser.dat")){
-            $this->rtmp->login($username, $password, $auth[1]);
+            $this->account = $this->rtmp->login($username, $password, $auth[1]);
         }
     }
 
@@ -31,5 +32,9 @@ class LoLClient
             return $result;
         }
         return false;
+    }
+
+    public function getCurrentAccount(){
+        return $this->account;
     }
 }
