@@ -13,7 +13,7 @@ Installation
 1. `git clone https://github.com/zlokomatic/phpLoL.git`
 2. composer install 
 
-###As dependency:
+###As dependency (dont do this if you did the standalone step):
 1. create a composer.json and define this dependencies.
 
     ```json
