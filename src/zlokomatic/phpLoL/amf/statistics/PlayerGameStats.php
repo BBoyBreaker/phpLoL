@@ -58,6 +58,8 @@ class PlayerGameStats extends LoLAMFBase {
     protected $leveledUp;
     protected $voterRating;
     protected $ratingAdjustmentFlags;
+    protected $ratingAuditFlags;
+    protected $gameMutators;
 
     /**
      * @param mixed $fellowPlayers
@@ -781,6 +783,38 @@ class PlayerGameStats extends LoLAMFBase {
     public function getRatingAdjustmentFlags()
     {
         return $this->ratingAdjustmentFlags;
+    }
+
+    /**
+     * @param mixed $ratingAuditFlags
+     */
+    public function setRatingAuditFlags($ratingAuditFlags)
+    {
+        $this->ratingAuditFlags = $ratingAuditFlags;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRatingAuditFlags()
+    {
+        return $this->ratingAuditFlags;
+    }
+
+    /**
+     * @param mixed $gameMutators
+     */
+    public function setGameMutators($gameMutators)
+    {
+        $this->gameMutators = $gameMutators;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGameMutators()
+    {
+        return $this->gameMutators;
     }
 
 
