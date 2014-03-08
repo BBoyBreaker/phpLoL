@@ -57,6 +57,8 @@ class LoLAuth
                 return array($data['user'], $this->queue($data));
             case 'LOGIN':
                 return array($data['user'] , $data['token']);
+            case 'BUSY':
+                throw new \Exception("Queue is currently busy / offline");
             default:
                 throw new \Exception("Unknown queue status {$data['status']}");
         }
