@@ -7,7 +7,7 @@ class LoLConfig
     private $clientVersion = "3.15.13_12_13_16_07";
     private $region;
     private $regions = array('EUW', 'EUNE', 'NA', 'BR', 'LAN', 'LAS', 'RU');
-    private $login_queue_host = array('EUW' => 'lq.eu.lol.riotgames.com',
+    private $login_queue_host = array('EUW' => 'lq.euw1.lol.riotgames.com',
                                       'EUNE' => 'lq.eun1.lol.riotgames.com',
                                       'NA' => 'lq.na1.lol.riotgames.com',
                                       'BR' => 'lq.br.lol.riotgames.com',
@@ -15,7 +15,7 @@ class LoLConfig
                                       'LAS' => 'lq.la2.lol.riotgames.com',
                                       'RU' => 'lq.ru.lol.riotgames.com',
                                      );
-    private $rpc_host = array('EUW' => 'prod.eu.lol.riotgames.com',
+    private $rpc_host = array('EUW' => 'prod.euw1.lol.riotgames.com',
                               'EUNE' => 'prod.eun1.lol.riotgames.com',
                               'NA' => 'prod.na1.lol.riotgames.com',
                               'BR' => 'prod.br.lol.riotgames.com',
